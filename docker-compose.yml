@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:10.9.1-rc-jammy
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=api
+    ports:
+      - "4001:3306"
+    container_name: api_crud_db_dev
+
+  app:
+    image: vue-php8.1
+    volumes:
+      - ../api_crud_php:/var/www/html
+    ports:
+      - "9090:80"
+      - "9091:443"
+      - "9092:8080"
+    links:
+      - db
+    depends_on:
+      - db
+    tty: true
+    container_name: api_crud_php
