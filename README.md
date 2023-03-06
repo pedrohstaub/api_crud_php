@@ -1,3 +1,7 @@
+## Atenção!
+### Este projeto está na primeira etapa de desenvolvimento, portanto pode conter bugs e trechos de debug e código não finalizado.
+<br><br>
+
 # Instalação
 
 Após buildar o docker, executar os comandos:
