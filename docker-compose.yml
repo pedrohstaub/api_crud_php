@@ -6,10 +6,10 @@ services:
     environment:
       - MYSQL_USER=root
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-      - MYSQL_DATABASE=api
+      - MYSQL_DATABASE=api_crud
     ports:
       - "4001:3306"
-    container_name: api_crud_db_dev
+    container_name: api_crud_db
 
   app:
     image: vue-php8.1
@@ -24,4 +24,4 @@ services:
     depends_on:
       - db
     tty: true
-    container_name: api_crud_php
+    container_name: api_crud

@@ -1,13 +1,14 @@
-
 {
     "autoload": {
         "psr-4": {
             "App\\":"App"
         },
         "files": [
-            "config.php"
+            "config/global.php"
         ]
     },
     "require": {
+        "firebase/php-jwt": "^6.4",
+        "mercadopago/dx-php": "^2.6"
     }
 }

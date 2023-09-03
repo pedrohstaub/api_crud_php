@@ -1,20 +1,23 @@
-## Atenção!
-### Este projeto está na primeira etapa de desenvolvimento, portanto pode conter bugs e trechos de debug e código não finalizado.
-<br><br>
+# Configurating Development Enviroment
 
-# Instalação
+First you'll have to build the docker image.<br>
+Suggested image name: vue-php8.1
 
-Após buildar o docker, executar os comandos:
+<pre>docker build -t <i>image_name</i> .</pre>
+Then you'll have to build the container:
+<pre>docker-compose up -d</pre>
 
-## Habilitar o mod_rewrite do apache
+After building the container, run the following commands:
+
+## Enabling apache mod_rewrite
 
 <pre>a2enmod rewrite</pre>
 <pre>service apache2 restart</pre>
 
-Caso a reescrita de url ainda não esteja funcionando, será necessário editar o arquivo:<br>
+If url rewrite still doesn't work, you'll have to edit the following file:<br>
 /etc/apache2/apache2.conf<br>
 
-Substituir o trecho:
+Replace:
 <pre>
 &lt;Directory /var/www/&gt;
         Options Indexes FollowSymLinks
@@ -23,7 +26,7 @@ Substituir o trecho:
 &lt;/Directory&gt;
 </pre>
 
-Por:
+For:
 
 <pre>
 &lt;Directory /var/www/&gt;
@@ -33,5 +36,5 @@ Por:
 &lt;/Directory&gt;
 </pre>
 
-Reiniciar novamente o apache<br>
+Then restart apache again<br>
 <pre>service apache2 restart</pre>

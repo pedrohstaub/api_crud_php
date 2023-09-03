@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\DAO;
 
 use Exception;
 use \PDO;
@@ -28,11 +28,11 @@ class Connect
 
         try {
             $this->con = new PDO(
-                "mysql:host=".DBHOST.";
-                :port=".DBPORT.";
-                 dbname=".DBNAME,
-                DBUSER,
-                DBPASS
+                "mysql:host=".getenv('DB_HOST').";
+                :port=".getenv('DB_PORT').";
+                 dbname=".getenv('DB_NAME'),
+                 getenv('DB_USER'),
+                 getenv('DB_PASS')
             );
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
