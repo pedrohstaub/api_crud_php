@@ -9,7 +9,12 @@ Then you'll have to build the container:
 
 After building the container, run the following commands:
 
-## Enabling apache mod_rewrite
+## First Steps
+
+<pre>docker exec -it <i>container_name</i> bash</pre>
+<pre>composer update</pre>
+
+### Enabling apache mod_rewrite
 
 <pre>a2enmod rewrite</pre>
 <pre>service apache2 restart</pre>
